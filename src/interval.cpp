@@ -28,8 +28,7 @@ bool Interval::right_closed() const {
 }
 
 bool Interval::operator==(const Interval& other) const {
-    return left_ == other.left_ && right_ == other.right_ && left_closed_ == other.left_closed_ &&
-           right_closed_ == other.right_closed_;
+    return left_ == other.left_ && right_ == other.right_ && left_closed_ == other.left_closed_ && right_closed_ == other.right_closed_;
 }
 
 bool Interval::operator<(const Interval& other) const {
@@ -46,8 +45,7 @@ bool Interval::operator<(const Interval& other) const {
 }
 
 std::ostream& operator<<(std::ostream& out, const Interval& interval) {
-    return out << (interval.left_closed_ ? '[' : '(') << interval.left_ << ", " << interval.right_
-               << (interval.right_closed_ ? ']' : ')');
+    return out << (interval.left_closed_ ? '[' : '(') << interval.left_ << ", " << interval.right_ << (interval.right_closed_ ? ']' : ')');
 }
 
 }  // namespace lab03

@@ -68,10 +68,10 @@ int main() {
                 } else if (command == 4) {
                     changed = second.remove(interval);
                 } else {
-                    std::cout << (first(interval) ? "Есть такой элемент.\n" : "Нет такого элемента.\n");
+                    std::cout << (first(interval) ? "Есть такой элемент\n" : "Нет такого элемента\n");
                     break;
                 }
-                std::cout << (changed ? "Множество изменилось.\n" : "Множество не изменилось.\n");
+                std::cout << (changed ? "Множество изменилось\n" : "Множество не изменилось\n");
                 break;
             }
             case 6:
@@ -84,10 +84,10 @@ int main() {
                 std::cout << "A - B = " << (first - second) << '\n';
                 break;
             case 9:
-                std::cout << (first == second ? "Множества равны.\n" : "Множества различаются.\n");
+                std::cout << (first == second ? "Множества равны\n" : "Множества не равны\n");
                 break;
             default:
-                std::cout << "Нет такой команды.\n";
+                std::cout << "Нет такой команды\n";
                 break;
         }
     }
