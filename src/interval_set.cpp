@@ -45,7 +45,7 @@ IntervalSet::IntervalSet(const IntervalSet& other) : size_(other.size_), capacit
     }
 }
 
-IntervalSet::IntervalSet(IntervalSet&& other) {
+IntervalSet::IntervalSet(IntervalSet&& other) noexcept {
     swap(other);
 }
 
@@ -57,7 +57,7 @@ IntervalSet& IntervalSet::operator=(const IntervalSet& other) {
     return *this;
 }
 
-IntervalSet& IntervalSet::operator=(IntervalSet&& other)  {
+IntervalSet& IntervalSet::operator=(IntervalSet&& other) noexcept {
     if (this != &other) {
         IntervalSet moved(std::move(other));
         swap(moved);
@@ -221,7 +221,7 @@ bool IntervalSet::operator!=(const IntervalSet& other) const {
     return !(*this == other);
 }
 
-void IntervalSet::swap(IntervalSet& other) {
+void IntervalSet::swap(IntervalSet& other) noexcept {
     std::swap(data_, other.data_);
     std::swap(size_, other.size_);
     std::swap(capacity_, other.capacity_);

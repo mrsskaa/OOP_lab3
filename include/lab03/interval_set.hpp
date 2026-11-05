@@ -11,9 +11,9 @@ class IntervalSet {
 public:
     IntervalSet() = default;
     IntervalSet(const IntervalSet& other);
-    IntervalSet(IntervalSet&& other);
+    IntervalSet(IntervalSet&& other) noexcept;
     IntervalSet& operator=(const IntervalSet& other);
-    IntervalSet& operator=(IntervalSet&& other);
+    IntervalSet& operator=(IntervalSet&& other) noexcept;
     ~IntervalSet();
 
     bool add(const Interval& interval);
@@ -30,7 +30,7 @@ public:
     IntervalSet operator-(const IntervalSet& other) const;
     bool operator==(const IntervalSet& other) const;
     bool operator!=(const IntervalSet& other) const;
-    void swap(IntervalSet& other);
+    void swap(IntervalSet& other) noexcept;
 
     friend std::ostream& operator<<(std::ostream& out, const IntervalSet& set);
 
